@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="GrowthPilot OS — websites, automation, and a clearer workspace for growing businesses.">
+<title>GrowthPilot OS — Build. Launch. Grow.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#090d19;--panel:#11182a;--line:rgba(255,255,255,.11);--muted:#aab4cc;--text:#f5f7ff;--blue:#8ca8ff;--mint:#7bf0ce;--purple:#a991ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% 5%,rgba(87,104,214,.19),transparent 32%),radial-gradient(ellipse at 10% 45%,rgba(61,213,177,.08),transparent 28%),var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.07)}.brand{display:flex;align-items:center;gap:11px;font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.5px}.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--mint));display:grid;place-items:center;color:#08101c;font-size:21px;font-weight:900;box-shadow:0 5px 28px #8ca8ff35}.brand small{display:block;font-size:10px;letter-spacing:2.4px;color:#9ba8c8;font-weight:600;margin-top:-4px}.navlinks{display:flex;align-items:center;gap:28px;color:#c2cbe0;font-size:14px}.navlinks a:hover{color:white}.btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:12px 18px;font-weight:700;transition:transform .18s,opacity .18s}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(110deg,#a8bbff,#7bf0ce);color:#08101b;box-shadow:0 10px 28px #7bf0ce18}.secondary{border:1px solid var(--line);background:#ffffff08;color:white}.hero{padding:86px 0 70px;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 12px;border:1px solid #8ca8ff40;background:#8ca8ff0d;border-radius:100px;color:#c5d1ff;font-size:12px;font-weight:700;letter-spacing:.5px}.dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}h1,h2,h3{font-family:Manrope,sans-serif;letter-spacing:-1.5px;line-height:1.12}h1{font-size:clamp(42px,5.3vw,68px);margin:23px 0 20px}h1 span{background:linear-gradient(100deg,#a8bbff 5%,#7bf0ce 80%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:17px;color:var(--muted);max-width:560px;line-height:1.8}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.fine{font-size:12px!important;color:#8490ad!important;margin-top:18px}.preview{position:relative;padding:20px;border-radius:24px;border:1px solid #ffffff20;background:linear-gradient(145deg,#19233a,#0d1322 70%);box-shadow:0 35px 100px #0008;transform:rotate(1deg)}.preview:before{content:"";position:absolute;inset:-1px;border-radius:24px;background:linear-gradient(140deg,#8ca8ff55,transparent 35%,#7bf0ce22);pointer-events:none}.windowbar{display:flex;align-items:center;gap:6px;padding:1px 2px 17px;border-bottom:1px solid var(--line);color:#8d9aba;font-size:11px}.windowbar i{width:7px;height:7px;border-radius:50%;background:#7381a3}.windowbar span{margin-left:auto}.dash{display:grid;grid-template-columns:105px 1fr;gap:15px;padding-top:18px}.side{border-right:1px solid var(--line);padding-right:12px}.side b{display:block;font-size:10px;color:#9aa7c5;margin:8px 0 17px}.side div{font-size:10px;padding:8px 6px;color:#9ca8c4;border-radius:7px;margin:3px 0}.side .sel{background:#8ca8ff20;color:#cbd6ff}.dashmain h3{font-size:16px;letter-spacing:-.4px;margin:2px 0 4px}.dashmain p{font-size:10px;margin:0 0 16px;color:#95a2bf}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.stat{padding:11px 9px;background:#ffffff08;border:1px solid var(--line);border-radius:10px}.stat small{display:block;color:#98a4c0;font-size:9px}.stat strong{display:block;font-size:18px;margin-top:5px}.stat em{font-size:9px;color:var(--mint);font-style:normal}.chart{height:112px;margin-top:12px;border:1px solid var(--line);border-radius:10px;padding:12px;background:linear-gradient(180deg,#8ca8ff0b,transparent);position:relative;overflow:hidden}.chart label{font-size:10px;color:#a7b3d0}.bars{display:flex;align-items:end;gap:8px;height:62px;margin-top:6px}.bars i{display:block;flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#8ca8ff,#7bf0ce55)}.float{position:absolute;right:-16px;bottom:35px;background:#111a2c;border:1px solid #ffffff22;padding:13px 16px;border-radius:14px;box-shadow:0 15px 35px #0008;font-size:11px}.float strong{display:block;font-size:14px}.float span{color:var(--mint)}.trust{padding:20px 0 60px;text-align:center;color:#8e9ab7;font-size:12px}.trustrow{display:flex;justify-content:center;gap:35px;flex-wrap:wrap;margin-top:18px;color:#c3cbe0;font-weight:700;font-size:13px}.section{padding:68px 0}.sectionhead{text-align:center;max-width:650px;margin:0 auto 38px}.sectionhead h2{font-size:clamp(30px,4vw,43px);margin:15px 0}.sectionhead p{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(145deg,#141d31,#0e1423);border:1px solid var(--line);padding:25px;border-radius:18px}.ico{width:43px;height:43px;display:grid;place-items:center;background:#8ca8ff18;border:1px solid #8ca8ff30;border-radius:13px;font-size:21px}.card h3{font-size:19px;letter-spacing:-.5px;margin:20px 0 10px}.card p{color:var(--muted);font-size:14px;margin:0}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:22px;border-top:1px solid #8ca8ff55}.num{font-size:12px;color:var(--mint);letter-spacing:2px;font-weight:800}.step h3{font-size:19px;letter-spacing:-.5px;margin:12px 0}.step p{font-size:14px;color:var(--muted)}.cta{margin:50px auto 85px;padding:42px;border-radius:24px;border:1px solid #8ca8ff3b;background:radial-gradient(ellipse at 90% 10%,#7bf0ce19,transparent 40%),linear-gradient(130deg,#18223a,#101729);display:flex;align-items:center;justify-content:space-between;gap:24px}.cta h2{font-size:clamp(27px,3.5vw,38px);margin:0 0 10px}.cta p{color:var(--muted);margin:0}.footer{border-top:1px solid var(--line);padding:25px 0;color:#8793b0;font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.modal{position:fixed;inset:0;z-index:10;background:#050812d9;backdrop-filter:blur(12px);display:none;place-items:center;padding:20px}.modal.open{display:grid}.dialog{width:min(440px,100%);background:#11192b;border:1px solid #ffffff20;border-radius:22px;padding:28px;box-shadow:0 30px 90px #0009;position:relative}.close{position:absolute;right:17px;top:15px;background:transparent;border:0;color:#b7c2dc;font-size:25px;cursor:pointer}.dialog h2{font-size:28px;margin:8px 0}.dialog>p{color:var(--muted);font-size:13px}.tabs{display:grid;grid-template-columns:1fr 1fr;background:#080e1c;padding:4px;border-radius:11px;margin:22px 0}.tabs button{border:0;border-radius:8px;padding:10px;color:#a8b3ce;background:transparent;cursor:pointer}.tabs button.active{background:#202d49;color:white}.field{display:block;font-size:12px;color:#c7d0e4;margin:14px 0 6px}.dialog input{width:100%;border:1px solid #ffffff20;background:#080e1b;color:white;border-radius:10px;padding:12px;outline:none}.dialog input:focus{border-color:#8ca8ff}.dialog .btn{width:100%;margin-top:18px}.notice{font-size:12px;color:#aab6d1;margin-top:13px;min-height:18px}.userbox{display:none;border:1px solid var(--line);border-radius:12px;padding:13px;margin-top:15px;font-size:13px;overflow-wrap:anywhere}.userbox.show{display:block}.mobiletoggle{display:none}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:38px;padding-top:58px}.preview{max-width:570px;width:100%;margin:auto}.navlinks{gap:13px}.navlinks .hide{display:none}.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.cta{align-items:flex-start;flex-direction:column;padding:30px}.trustrow{gap:16px}.float{right:-5px}.section{padding:50px 0}}
+@media(max-width:480px){.wrap{width:calc(100% - 28px)}.nav{height:70px}.navlinks{gap:8px;font-size:12px}.navlinks .btn{padding:10px 11px}.brand{font-size:14px}.logo{width:34px;height:34px}.hero{padding:46px 0 48px}h1{font-size:43px}.hero p{font-size:15px}.preview{padding:12px;border-radius:18px}.dash{grid-template-columns:76px 1fr;gap:10px}.stats{gap:5px}.stat{padding:8px 6px}.stat strong{font-size:15px}.side div{font-size:9px}.float{bottom:23px}.trust{padding-bottom:35px}.footer{flex-direction:column}.actions .btn{flex:1}.cta{margin:30px auto 55px}}
+</style>
+</head>
+<body>
+<header class="wrap nav">
+<a class="brand" href="#" aria-label="GrowthPilot home"><span class="logo">↗</span><span>GrowthPilot <small>OPERATING SYSTEM</small></span></a>
+<nav class="navlinks" aria-label="Main navigation"><a class="hide" href="#services">Services</a><a class="hide" href="#process">How it works</a><button class="btn secondary" data-open="signin">Client portal ↗</button></nav>
+</header>
+<main>
+<section class="wrap hero">
+<div>
+<div class="eyebrow"><span class="dot"></span> YOUR NEXT STAGE STARTS HERE</div>
+<h1>Turn your ideas into <span>real growth.</span></h1>
+<p>Websites, digital workflows, and client collaboration — brought together in one clear, modern workspace built to move your business forward.</p>
+<div class="actions"><a class="btn primary" href="#services">Explore what we do <span>→</span></a><button class="btn secondary" data-open="signup">Start a conversation ↗</button></div>
+<p class="fine">Practical digital solutions. Clear communication. Progress you can follow.</p>
+</div>
+<div class="preview" aria-label="Illustrative GrowthPilot dashboard preview">
+<div class="windowbar"><i></i><i></i><i></i><span>GROWTHPILOT / WORKSPACE</span></div>
+<div class="dash"><aside class="side"><b>WORKSPACE</b><div class="sel">◈ Overview</div><div>▦ Projects</div><div>◷ Timeline</div><div>↗ Reports</div><div>⚙ Settings</div></aside>
+<div class="dashmain"><h3>Your workspace</h3><p>A clear view of what's moving forward.</p><div class="stats"><div class="stat"><small>Projects</small><strong>04</strong><em>In focus</em></div><div class="stat"><small>Milestones</small><strong>12</strong><em>Tracked</em></div><div class="stat"><small>Updates</small><strong>08</strong><em>Shared</em></div></div><div class="chart"><label>Project progress · illustration</label><div class="bars"><i style="height:35%"></i><i style="height:52%"></i><i style="height:43%"></i><i style="height:68%"></i><i style="height:59%"></i><i style="height:84%"></i><i style="height:95%"></i><i style="height:75%"></i></div></div></div></div>
+<div class="float"><span>✦</span> A little more clarity<strong>One step at a time.</strong></div>
+</div>
+</section>
+<div class="wrap trust">BUILT AROUND THE THINGS THAT HELP BUSINESSES MOVE FORWARD<div class="trustrow"><span>✦ Strategy</span><span>⌘ Digital experiences</span><span>↗ Automation</span><span>◈ Client collaboration</span></div></div>
+<section class="section" id="services"><div class="wrap"><div class="sectionhead"><div class="eyebrow">WHAT WE CAN BUILD TOGETHER</div><h2>Digital work, made more manageable.</h2><p>From your first online presence to smoother day-to-day operations, bring the right pieces together without unnecessary complexity.</p></div>
+<div class="cards">
+<article class="card"><div class="ico">✳</div><h3>Websites & digital presence</h3><p>Responsive, polished websites that introduce your business clearly and help visitors understand what you offer.</p></article>
+<article class="card"><div class="ico">⌘</div><h3>Workflow automation</h3><p>Reduce repetitive steps and connect everyday processes with thoughtfully designed digital workflows.</p></article>
+<article class="card"><div class="ico">◈</div><h3>Client workspace</h3><p>A central place to sign in and, as your workspace is configured, follow project updates and shared deliverables.</p></article>
+</div></div></section>
+<section class="section" id="process"><div class="wrap"><div class="sectionhead"><div class="eyebrow">A CLEARER PROCESS</div><h2>From idea to next step.</h2><p>Keep the work understandable, collaborative, and focused on what matters.</p></div><div class="steps">
+<div class="step"><div class="num">01 / DISCOVER</div><h3>Tell us what you need</h3><p>Share your goal, your current challenge, and what success would look like for your business.</p></div>
+<div class="step"><div class="num">02 / PLAN</div><h3>Shape the approach</h3><p>Clarify the scope, agree on the priorities, and establish a practical plan before work begins.</p></div>
+<div class="step"><div class="num">03 / BUILD</div><h3>Make progress visible</h3><p>Work through the agreed steps and keep communication and project updates easy to follow.</p></div>
+</div></div></section>
+<section class="wrap cta"><div><h2>Ready to move an idea forward?</h2><p>Open the client portal or get in touch to start planning your next step.</p></div><div class="actions" style="margin:0"><button class="btn primary" data-open="signup">Get started ↗</button><a class="btn secondary" href="mailto:hello@growthpilot.example">Email us</a></div></section>
+</main>
+<footer class="wrap footer"><a class="brand" href="#"><span class="logo">↗</span><span>GrowthPilot <small>OPERATING SYSTEM</small></span></a><span>© <span id="year"></span> GrowthPilot OS. Built for what comes next.</span><span>Clear goals. Thoughtful execution.</span></footer>
+<div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+<div class="dialog"><button class="close" id="closeModal" aria-label="Close">×</button><div class="eyebrow"><span class="dot"></span> GROWTHPILOT CLIENT PORTAL</div><h2 id="dialogTitle">Welcome back.</h2><p id="dialogSub">Sign in to your account or create one to get started.</p>
+<div class="tabs"><button type="button" class="active" id="signinTab">Sign in</button><button type="button" id="signupTab">Create account</button></div>
+<form id="authForm"><label class="field" for="email">Email address</label><input id="email" type="email" autocomplete="email" placeholder="you@company.com" required><label class="field" for="password">Password</label><input id="password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required><button class="btn primary" type="submit" id="submitAuth">Sign in →</button></form>
+<div class="notice" id="authNotice" role="status"></div><div class="userbox" id="userBox"></div><p class="fine">Your account sign-in is handled by Supabase Authentication. Project records must be separately protected by database access policies.</p>
+</div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://phtuvjriwztridhonqep.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_yPOuN499gQ-YBnSJfykrSA_qKukY9w";
+let supabaseClient = null;
+if (window.supabase && SUPABASE_URL.startsWith("https://") && SUPABASE_PUBLISHABLE_KEY) {
+  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+}
+document.getElementById("year").textContent = new Date().getFullYear();
+const modal = document.getElementById("authModal");
+const notice = document.getElementById("authNotice");
+const userBox = document.getElementById("userBox");
+let authMode = "signin";
+function openModal(mode) {
+  modal.classList.add("open");
+  setMode(mode || "signin");
+  notice.textContent = "";
+}
+function closeModal() { modal.classList.remove("open"); }
+function setMode(mode) {
+  authMode = mode;
+  document.getElementById("signinTab").classList.toggle("active", mode === "signin");
+  document.getElementById("signupTab").classList.toggle("active", mode === "signup");
+  document.getElementById("dialogTitle").textContent = mode === "signin" ? "Welcome back." : "Create your account.";
+  document.getElementById("dialogSub").textContent = mode === "signin" ? "Sign in to your account to continue." : "Create an account with your email address.";
+  document.getElementById("submitAuth").textContent = mode === "signin" ? "Sign in →" : "Create account →";
+  document.getElementById("password").autocomplete = mode === "signin" ? "current-password" : "new-password";
+  notice.textContent = "";
+}
+document.querySelectorAll("[data-open]").forEach(button => button.addEventListener("click", () => openModal(button.dataset.open)));
+document.getElementById("closeModal").addEventListener("click", closeModal);
+modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
+document.addEventListener("keydown", event => { if (event.key === "Escape") closeModal(); });
+document.getElementById("signinTab").addEventListener("click", () => setMode("signin"));
+document.getElementById("signupTab").addEventListener("click", () => setMode("signup"));
+document.getElementById("authForm").addEventListener("submit", async event => {
+  event.preventDefault();
+  if (!supabaseClient) { notice.textContent = "Authentication service did not load. Please refresh and try again."; return; }
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+  const submit = document.getElementById("submitAuth");
+  submit.disabled = true; submit.style.opacity = ".65"; notice.textContent = "Please wait…";
+  try {
+    const response = authMode === "signup"
+      ? await supabaseClient.auth.signUp({ email, password })
+      : await supabaseClient.auth.signInWithPassword({ email, password });
+    if (response.error) throw response.error;
+    if (authMode === "signup" && !response.data.session) {
+      notice.textContent = "Account request received. Check your email for a confirmation link if email confirmation is enabled.";
+      return;
+    }
+    const user = response.data.user;
+    notice.textContent = authMode === "signup" ? "Account created. You are signed in." : "Signed in successfully.";
+    userBox.classList.add("show");
+    userBox.textContent = "Signed in as " + (user?.email || email) + ". Your account is authenticated. Project data and client records will appear here only after secure workspace access is configured.";
+    document.getElementById("authForm").reset();
+  } catch (error) {
+    notice.textContent = error?.message || "Could not complete sign-in. Please check your details and try again.";
+  } finally {
+    submit.disabled = false; submit.style.opacity = "1";
+  }
+});
+if (supabaseClient) {
+  supabaseClient.auth.getSession().then(({data}) => {
+    const user = data?.session?.user;
+    if (user) {
+      userBox.classList.add("show");
+      userBox.textContent = "Signed in as " + (user.email || "your account") + ". Project records require separately configured secure workspace access.";
+    }
+  });
+}
+</script>
+</body>
+</html>
