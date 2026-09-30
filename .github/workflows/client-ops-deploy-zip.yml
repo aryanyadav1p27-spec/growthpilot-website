@@ -1,0 +1,35 @@
+name: Build Client Ops Cloudflare Upload ZIP
+on:
+  push:
+    paths:
+      - ".github/workflows/client-ops-deploy-zip.yml"
+      - "client-ops/index.html"
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Create direct-upload ZIP
+        run: |
+          mkdir -p package
+          cp client-ops/index.html package/index.html
+          cd package
+          zip -9 ../client-ops-cloudflare-upload.zip index.html
+      - name: Verify ZIP contents
+        run: |
+          unzip -l client-ops-cloudflare-upload.zip
+          test "$(unzip -Z1 client-ops-cloudflare-upload.zip | wc -l)" -eq 1
+          test "$(unzip -Z1 client-ops-cloudflare-upload.zip)" = "index.html"
+          test "$(unzip -p client-ops-cloudflare-upload.zip index.html | wc -c)" -gt 10000
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: client-ops-cloudflare-upload
+          path: client-ops-cloudflare-upload.zip
+          if-no-files-found: error
+          retention-days: 7
