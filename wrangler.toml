@@ -1,0 +1,6 @@
+name = "growthpilot-client-ops"
+compatibility_date = "2026-09-30"
+
+[assets]
+directory = "./client-ops-portal"
+run_worker_first = false
