@@ -14,6 +14,23 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Set up Node.js for JavaScript syntax validation
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate main Client Ops module syntax
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          html = Path("client-ops/index.html").read_text()
+          match = re.search(r'<script type="module">([\\s\\S]*?)</script>', html)
+          if not match:
+              raise SystemExit("Main type=module script not found")
+          Path("/tmp/client-ops-main.mjs").write_text(match.group(1))
+          print("Extracted main module:", len(match.group(1)), "characters")
+          PY
+          node --check /tmp/client-ops-main.mjs
       - name: Create direct-upload ZIP
         run: |
           mkdir -p package
