@@ -48,9 +48,8 @@
 <div class="panel"><h2>Registered websites &amp; enquiry forms</h2><div id="websiteSitesList" class="list"></div></div><div class="panel"><h2>Saved website audits</h2><div id="websiteAuditsList" class="list"></div></div>
 <div class="panel"><h2>Client outreach drafts</h2><div id="outreachDraftsList" class="list"></div></div>
 </section></main></div><footer>GrowthPilot Client Ops · Securely connected to your existing Supabase project · No automatic messages are sent</footer></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-const { createClient } = supabase;
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const SUPABASE_URL='https://phtuvjriwztridhonqep.supabase.co';
 const SUPABASE_KEY='sb_publishable_yPOuN499gQ-YBnSJfykrSA_qKukY9wK';
 const sb=createClient(SUPABASE_URL,SUPABASE_KEY);
