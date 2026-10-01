@@ -22,15 +22,31 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
-          import re
+          import re, subprocess, sys
           html = Path("client-ops/index.html").read_text()
-          match = re.search(r'<script type="module">([\s\S]*?)</script>', html)
+          match = re.search(r'<script type="module">([\\s\\S]*?)</script>', html)
           if not match:
               raise SystemExit("Main type=module script not found")
-          Path("/tmp/client-ops-main.mjs").write_text(match.group(1))
-          print("Extracted main module:", len(match.group(1)), "characters")
+          source = match.group(1)
+          target = Path("/tmp/client-ops-main.mjs")
+          target.write_text(source)
+          print("Extracted main module:", len(source), "characters")
+          result = subprocess.run(["node", "--check", str(target)], text=True, capture_output=True)
+          if result.returncode:
+              print(result.stderr[:2000])
+              err = result.stderr.splitlines()
+              marker = next((i for i, line in enumerate(err) if "client-ops-main.mjs:" in line), -1)
+              if marker >= 0 and marker + 2 < len(err):
+                  src_line = err[marker + 1]
+                  caret_line = err[marker + 2]
+                  col = caret_line.find("^")
+                  print("DIAGNOSTIC line:", err[marker])
+                  print("DIAGNOSTIC caret column:", col)
+                  if col >= 0:
+                      print("DIAGNOSTIC source context:", src_line[max(0,col-160):col+160])
+              sys.exit(result.returncode)
+          print("JavaScript syntax validation passed")
           PY
-          node --check /tmp/client-ops-main.mjs
       - name: Create direct-upload ZIP
         run: |
           mkdir -p package
