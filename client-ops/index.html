@@ -48,8 +48,9 @@
 <div class="panel"><h2>Registered websites &amp; enquiry forms</h2><div id="websiteSitesList" class="list"></div></div><div class="panel"><h2>Saved website audits</h2><div id="websiteAuditsList" class="list"></div></div>
 <div class="panel"><h2>Client outreach drafts</h2><div id="outreachDraftsList" class="list"></div></div>
 </section></main></div><footer>GrowthPilot Client Ops · Securely connected to your existing Supabase project · No automatic messages are sent</footer></div>
-<script type="module">
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const { createClient } = supabase;
 const SUPABASE_URL='https://phtuvjriwztridhonqep.supabase.co';
 const SUPABASE_KEY='sb_publishable_yPOuN499gQ-YBnSJfykrSA_qKukY9wK';
 const sb=createClient(SUPABASE_URL,SUPABASE_KEY);
@@ -65,7 +66,7 @@ function setTab(tab){activeTab=tab;document.querySelectorAll('[id^="tab-"]').for
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
 document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.goto)));
 async function showSession(s){session=s;if(!s){$('appView').classList.add('hidden');$('authView').classList.remove('hidden');return;} $('authView').classList.add('hidden');$('appView').classList.remove('hidden');$('userEmail').textContent=s.user.email||'Signed in';await loadClients();}
-$('authForm').addEventListener('submit',async e=>{e.preventDefault();clearNotice('authNotice');$('signInBtn').disabled=true;const {error}=await sb.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value});$('signInBtn').disabled=false;if(error){notice('authNotice',error.message,true);return;}await showSession((await sb.auth.getSession()).data.session);});
+$('authForm').addEventListener('submit',async e=>{e.preventDefault();clearNotice('authNotice');const b=$('signInBtn');b.disabled=true;b.textContent='Signing in…';try{const result=await Promise.race([sb.auth.signInWithPassword({email:$('email').value.trim(),password:$('password').value}),new Promise((_,reject)=>setTimeout(()=>reject(new Error('Sign-in request timed out. Check your internet connection and try again.')),15000))]);if(result.error){notice('authNotice',result.error.message,true);return;}const {data,error}=await sb.auth.getSession();if(error)throw error;await showSession(data.session);}catch(err){notice('authNotice','Sign-in failed: '+(err?.message||'Please try again.'),true);}finally{b.disabled=false;b.textContent='Sign in';}});
 $('signUpBtn').addEventListener('click',async()=>{clearNotice('authNotice');const email=$('email').value.trim(),password=$('password').value;if(!email||password.length<6){notice('authNotice','Enter an email and a password of at least 6 characters.',true);return;}const {data,error}=await sb.auth.signUp({email,password});if(error){notice('authNotice',error.message,true);return;}notice('authNotice',data.session?'Account created. You are signed in.':'Account created. Check your email to confirm, then sign in.');if(data.session)await showSession(data.session);});
 $('signOutBtn').addEventListener('click',async()=>{await sb.auth.signOut();clients=[];currentClient=null;await showSession(null);});
 sb.auth.onAuthStateChange((_event,s)=>{if(s!==session)showSession(s);});
