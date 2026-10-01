@@ -24,7 +24,7 @@ jobs:
           from pathlib import Path
           import re, subprocess, sys
           html = Path("client-ops/index.html").read_text()
-          match = re.search(r'<script type="module">([\\s\\S]*?)</script>', html)
+          match = re.search(r'<script type="module">([\s\S]*?)</script>', html)
           if not match:
               raise SystemExit("Main type=module script not found")
           source = match.group(1)
